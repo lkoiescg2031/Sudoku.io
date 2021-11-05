@@ -21,19 +21,29 @@
     </Appenders>
 
     <Loggers>
-        <Root level="info">
-            <AppenderRef ref="console"/>
-        </Root>
 
+        <!-- spring framework logging -->
         <Logger name="org.springframework" level="info" additivity="false" >
             <AppenderRef ref="console" />
             <AppenderRef ref="file" />
         </Logger>
 
+        <!-- application logging -->
         <Logger name="io.sudoku.sudoku" additivity="true" >
             <AppenderRef ref="console" level="info" />
             <AppenderRef ref="file" level="info" />
         </Logger>
+
+        <!-- jdbc logging -->
+        <Logger name="log4jdbc.log4j2" level="info" additivity="false">
+            <MarkerFilter marker="LOG4JDBC_JDBC" onMatch="DENY" onMismatch="NEUTRAL"/>
+            <Appender-ref ref="log4jdbc_file"/>
+        </Logger>
+
+        <Root level="info">
+            <AppenderRef ref="console"/>
+        </Root>
+
     </Loggers>
 
 </Configuration>
