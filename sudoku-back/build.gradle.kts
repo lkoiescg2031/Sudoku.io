@@ -28,6 +28,8 @@ dependencies {
 	// spring boot dependency 설정
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+	// been validation
+	implementation("org.springframework.boot:spring-boot-starter-validation:2.6.4")
 
 	// kotlin dependency 설정
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
