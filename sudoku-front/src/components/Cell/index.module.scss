@@ -1,0 +1,30 @@
+.cell {
+    display: inline-block;
+    flex-grow: 1;
+    width: 33%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 25px;
+    text-align: center;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.cell {
+    color: #000;
+    cursor: pointer;
+
+    &.isFixed {
+			color: blue;
+			font-weight: 700;
+			pointer-events : none;
+    }
+
+    &.isZero {
+			color: transparent;
+    }
+
+    &.isSelected {
+			background-color: red;
+    }
+}

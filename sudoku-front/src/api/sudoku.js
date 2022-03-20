@@ -5,3 +5,7 @@ export function fetchSudoku({params}) {
         params
     });
 }
+
+export function setBoard() {
+
+}
