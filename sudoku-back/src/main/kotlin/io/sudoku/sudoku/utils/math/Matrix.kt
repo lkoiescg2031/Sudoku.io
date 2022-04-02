@@ -1,4 +1,4 @@
-package io.sudoku.sudoku.math
+package io.sudoku.sudoku.utils.math
 
 operator fun List<Int>.times(other: List<Int>): List<Int> {
     assert(this.size == 9)

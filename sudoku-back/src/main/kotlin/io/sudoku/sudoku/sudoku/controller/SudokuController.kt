@@ -18,6 +18,6 @@ class SudokuController {
     private lateinit var sudokuService: SudokuService;
 
     @GetMapping("/random")
-    fun getRandomMap(sudokuRequest: SudokuRequest): Sudoku
-        = sudokuService.getRandomMap(sudokuRequest)
+    fun createRandomSudoku(sudokuRequest: SudokuRequest): Sudoku
+        = sudokuService.createRandomSudoku(sudokuRequest)
 }

@@ -4,5 +4,5 @@ import io.sudoku.sudoku.sudoku.model.Sudoku
 import io.sudoku.sudoku.sudoku.model.SudokuRequest
 
 interface SudokuService {
-    fun getRandomMap(sudokuRequest: SudokuRequest): Sudoku
+    fun createRandomSudoku(sudokuRequest: SudokuRequest): Sudoku
 }

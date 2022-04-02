@@ -1,21 +1,6 @@
 package io.sudoku.sudoku.sudoku.model
 
-typealias Board = List<List<Int>>
+import io.sudoku.sudoku.board.model.Board
 
-data class Sudoku(val map: Board)
 
-/**
- * ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
- * | 1 2 3 | 1 2 3 | 1 2 3 |
- * | 1 2 3 | 1 2 3 | 1 2 3 |
- * | 1 2 3 | 1 2 3 | 1 2 3 |
- * ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
- * | 1 2 3 | 1 2 3 | 1 2 3 |
- * | 1 2 3 | 1 2 3 | 1 2 3 |
- * | 1 2 3 | 1 2 3 | 1 2 3 |
- * ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
- * | 1 2 3 | 1 2 3 | 1 2 3 |
- * | 1 2 3 | 1 2 3 | 1 2 3 |
- * | 1 2 3 | 1 2 3 | 1 2 3 |
- * ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
- * */
+data class Sudoku(val gameId: String, val map: Board)
