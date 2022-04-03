@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.sudoku.sudoku.sudoku.mapper.SudokuMapper">
+    <insert id="insertSudoku">
+        INSERT INTO tb_sudoku(game_id, map, correct, correct_date, reg_date, mod_date)
+        VALUES (#{gameId},#{map},#{correct},#{correctDate},#{regDate},#{modDate})
+    </insert>
+</mapper>

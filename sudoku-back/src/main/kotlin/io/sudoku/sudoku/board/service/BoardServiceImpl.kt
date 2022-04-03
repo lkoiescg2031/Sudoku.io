@@ -6,15 +6,13 @@ import org.springframework.stereotype.Service
 import java.util.*
 
 @Service
-class BoardServiceImpl: BoardService {
+class BoardServiceImpl : BoardService {
 
-    override fun createRandomMap(seed: Long?, showCount: Int): Board {
-        val s0 = seed?.let {
-            getLine(it)
-        } ?: getLine()
-
+    override fun createRandomBoard(seed: Long?, showCount: Int): Board {
+        val s0 = seed?.let { getLine(it) } ?: getLine()
         val map = getMap(s0)
-        return filterMap(map, showCount)
+        val levelAppliedMap = applyLevel(map, showCount)
+        return Board(levelAppliedMap)
     }
 
     private fun getLine(): List<Int> = (1..9).toList().shuffled()
@@ -38,7 +36,7 @@ class BoardServiceImpl: BoardService {
         return listOf(s0, s1, s2, s3, s4, s5, s6, s7, s8)
     }
 
-    private fun filterMap(map: List<List<Int>>, showCount: Int): List<List<Int>> {
+    private fun applyLevel(targetMap: List<List<Int>>, showCount: Int): List<List<Int>> {
         var random = Random()
 
         var cnt = 0
@@ -49,7 +47,7 @@ class BoardServiceImpl: BoardService {
             var j = random.nextInt(8) + 1
 
             if (ret[i][j] == 0 && random.nextBoolean()) {
-                ret[i][j] = map[i][j]
+                ret[i][j] = targetMap[i][j]
                 cnt++
                 if (cnt >= showCount) {
                     return ret.map { it.toList() }.toList()

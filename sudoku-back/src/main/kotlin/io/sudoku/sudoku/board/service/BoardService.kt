@@ -4,5 +4,5 @@ import io.sudoku.sudoku.board.model.Board
 
 interface BoardService {
 
-    fun createRandomMap(seed: Long?, showCount: Int):Board;
+    fun createRandomBoard(seed: Long?, showCount: Int):Board;
 }
