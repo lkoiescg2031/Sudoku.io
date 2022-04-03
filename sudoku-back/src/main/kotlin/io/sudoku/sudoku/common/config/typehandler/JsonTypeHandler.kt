@@ -14,21 +14,24 @@ open class JsonTypeHandler<T>(private val clazz: Class<T>) : TypeHandler<T> {
         ps?.setString(i, jsonStr)
     }
 
-    override fun getResult(rs: ResultSet?, columnName: String?): T {
+    override fun getResult(rs: ResultSet?, columnName: String?): T? {
         val objectMapper = ObjectMapper()
-        val jsonStr = rs?.getString(columnName)
-        return objectMapper.readValue(jsonStr, clazz)
+        return rs?.getString(columnName)?.let {
+            objectMapper.readValue(it, clazz)
+        }
     }
 
-    override fun getResult(rs: ResultSet?, columnIndex: Int): T {
+    override fun getResult(rs: ResultSet?, columnIndex: Int): T? {
         val objectMapper = ObjectMapper()
-        val jsonStr = rs?.getString(columnIndex)
-        return objectMapper.readValue(jsonStr, clazz)
+        return rs?.getString(columnIndex)?.let {
+            objectMapper.readValue(it, clazz)
+        }
     }
 
-    override fun getResult(cs: CallableStatement?, columnIndex: Int): T {
+    override fun getResult(cs: CallableStatement?, columnIndex: Int): T? {
         val objectMapper = ObjectMapper()
-        val jsonStr = cs?.getString(columnIndex)
-        return objectMapper.readValue(jsonStr, clazz)
+        return cs?.getString(columnIndex)?.let {
+            objectMapper.readValue(it, clazz)
+        }
     }
 }
