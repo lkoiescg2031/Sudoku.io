@@ -1,0 +1,12 @@
+.reset_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+}
+
+.reset_btn,
+.reset_all {
+    flex: 1 1 0;
+    height: 40px;
+}

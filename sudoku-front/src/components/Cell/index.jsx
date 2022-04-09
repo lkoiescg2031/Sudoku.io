@@ -11,7 +11,7 @@ const cx = classnames.bind(style);
  
 const Cell = ({x, y}) => {
   const { num, isFixed } = useCell(x,y);
-  const {curX, curY, updateCurser} = useCurser();
+  const { curX, curY, updateCurser } = useCurser();
   const selectCurser = () => {
     updateCurser(x,y);
   }
@@ -23,7 +23,7 @@ const Cell = ({x, y}) => {
       isSelected : x === curX && y === curY 
     })}
       onClick={selectCurser}
-    >{num}</div>
+    >{num || num != 0}</div>
   )
 }
 

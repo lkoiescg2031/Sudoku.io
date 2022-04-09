@@ -6,7 +6,7 @@ import React, {useState, useEffect} from 'react';
 import {GameProvider} from './context/gameContext';
 import {CurserProvider} from './context/curserContext';
 import SudokuBoard from './components/SudokuBoard';
-
+import InsertSection from './components/InsertSection';
 // container
 
 // api
@@ -25,6 +25,7 @@ function App() {
             <CurserProvider>
                 <div className="sdk">
                     <SudokuBoard/>
+                    <InsertSection />
                 </div>
             </CurserProvider>
         </GameProvider>);

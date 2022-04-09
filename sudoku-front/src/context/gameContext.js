@@ -31,6 +31,10 @@ const INIT_CONTEXT = {
 
 const GameContext = React.createContext(INIT_CONTEXT);
 
+function deepCopyObj(obj) {
+  return JSON.parse(JSON.stringify(obj));
+}
+
 export const GameProvider = ({ children }) => {
 
   const [board, setBoard] = useState(INIT_BOARD);
@@ -38,9 +42,16 @@ export const GameProvider = ({ children }) => {
 
   const [isLoading, setLoading] = useState(false);
 
+  const updateValue = (x, y, num) => {
+    const newBoard = deepCopyObj(board);
+    newBoard[x][y] = num;
+    setBoard(newBoard);
+  }
+
   const value = {
     board,
-    isFixed
+    isFixed,
+    updateValue
   };
 
   useEffect(() => {
