@@ -15,16 +15,17 @@
     cursor: pointer;
 
     &.isFixed {
-			color: blue;
-			font-weight: 700;
-			pointer-events : none;
+        color: blue;
+        font-weight: 700;
+        pointer-events : none;
     }
 
     &.isZero {
-			color: transparent;
+        color: transparent;
     }
 
     &.isSelected {
-			background-color: red;
+        background-color: red;
+        color: #fff;
     }
 }
