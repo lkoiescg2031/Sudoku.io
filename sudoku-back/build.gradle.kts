@@ -37,7 +37,7 @@ dependencies {
 
 	// database dependency 설정
 	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0")
-	implementation("org.postgresql:postgresql:42.1.4")
+	implementation("org.postgresql:postgresql:42.2.24")
 
 	// logger 설정
 	implementation("org.springframework.boot:spring-boot-starter-log4j2:2.5.6")
