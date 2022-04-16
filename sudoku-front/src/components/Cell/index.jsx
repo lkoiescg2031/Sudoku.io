@@ -10,10 +10,12 @@ import style from './index.module.scss'
 const cx = classnames.bind(style);
  
 const Cell = ({x, y}) => {
-  const { num, isFixed } = useCell(x,y);
+  const { num, isFixed, updateNumBoard } = useCell(x,y);
   const { curX, curY, updateCurser } = useCurser();
   const selectCurser = () => {
     updateCurser(x,y);
+    // 추가본
+    updateNumBoard(x,y);
   }
 
   return (

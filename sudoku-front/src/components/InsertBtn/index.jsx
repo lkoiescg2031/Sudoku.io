@@ -10,14 +10,14 @@ import style from './index.module.scss'
 const cx = classnames.bind(style);
 
 function useCellHandler() {
-    return  useContext(GameContext)
+    return useContext(GameContext)
 }
 
-const InsertBtn = ({num}) => {    
+const InsertBtn = ({num, isChecked}) => {    
     // 커서를 사용
     const { curX, curY } = useCurser();
     
-    const { board, updateValue } = useGameContext();
+    const { board, updateValue } = useCellHandler();
 
     const setBoardNum = () => {
         // 보드에 숫자 추가
@@ -27,7 +27,7 @@ const InsertBtn = ({num}) => {
     }
 
     return (
-        <button type="button" className={cx('ins_btn')} onClick={setBoardNum}>
+        <button type="button" className={cx('ins_btn',{ checked : isChecked, })} onClick={setBoardNum}>
             {num}
         </button>
     )

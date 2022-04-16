@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 
 import {fetchSudoku} from "../api/sudoku";
 
-import { createBoard } from '../utils/board';
+import { createBoard, createNumBoard, checkBoard } from '../utils/board';
 import {getRandomIntFromRange} from "../utils/math"
 
 const FETCHED_BOARD = [
@@ -22,6 +22,9 @@ const FETCHED_BOARD = [
 
 const INIT_BOARD = createBoard(0);
 const INIT_FIXED = createBoard(true);
+// 추가본
+const INIT_BOARD_ID = null;
+const INIT_NUM_BOARD = createNumBoard(true);
 
 const INIT_CONTEXT = {
   board: INIT_BOARD,
@@ -41,6 +44,29 @@ export const GameProvider = ({ children }) => {
   const [isFixed, setIsFixed] = useState(INIT_FIXED);
 
   const [isLoading, setLoading] = useState(false);
+  //추가본
+  const [numBoard, setNumBoard] = useState(INIT_NUM_BOARD);
+  const [boardId, setBoardId] = useState(null);
+
+  // 추가본
+  const updateNumBoard = (x, y) => {
+    let newBoard = createNumBoard(true);
+
+    newBoard = checkBoard(newBoard, board, x, y);
+
+    setNumBoard(newBoard);
+  }
+
+  const getNewBoard = () => {
+
+  }
+
+  // 추가본
+  const resetBoard = () => {
+    // 나중에 FETCHED_BOARD 변경
+    setBoard(FETCHED_BOARD);
+    setNumBoard(INIT_NUM_BOARD);
+  }
 
   const updateValue = (x, y, num) => {
     const newBoard = deepCopyObj(board);
@@ -51,7 +77,9 @@ export const GameProvider = ({ children }) => {
   const value = {
     board,
     isFixed,
-    updateValue
+    numBoard,
+    updateValue,
+    updateNumBoard
   };
 
   useEffect(() => {
@@ -70,6 +98,7 @@ export const GameProvider = ({ children }) => {
               const { data } = await fetchSudoku({params: {showCount: rand}});
 
               map = data.map;
+
             }
 
             setBoard(map);
