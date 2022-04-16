@@ -8,3 +8,6 @@ gradlew.bat
 
 #project
 build
+logs
+
+node_modules

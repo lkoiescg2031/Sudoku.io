@@ -1,0 +1,9 @@
+logging:
+  config: classpath:logger/log4j2-local.xml
+
+spring:
+  datasource:
+    driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:postgresql://localhost:5432/sudoku
+    username: admin
+    password: admin123!@#

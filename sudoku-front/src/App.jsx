@@ -1,26 +1,33 @@
-import React from "react";
+/* eslint-disable */
+// outside module
+import React, {useState, useEffect} from 'react';
 
-import "./App.css";
+// component
+import {GameProvider} from './context/gameContext';
+import {CurserProvider} from './context/curserContext';
+import SudokuBoard from './components/SudokuBoard';
+
+// container
+
+// api
+
+// utils
+import {getRandomIntFromRange} from "./utils/math"
+
+// css
+import "./App.scss";
+
 
 function App() {
-	return (
-		<div className="App">
-			<header className="App-header">
-				<img className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
-		</div>
-	);
+    
+    return (
+        <GameProvider>
+            <CurserProvider>
+                <div className="sdk">
+                    <SudokuBoard/>
+                </div>
+            </CurserProvider>
+        </GameProvider>);
 }
 
 export default App;
