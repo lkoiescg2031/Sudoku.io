@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service
 @Service
 class BoardServiceImpl : BoardService {
 
-    override fun isOriginBoard(target: Board, source: Board): Boolean {
-        source.forEachIndexed { i, ints ->
-            ints.forEachIndexed { j, sourceValue ->
+    override fun isOriginBoard(target: Board, board: Board): Boolean {
+        board.forEachIndexed { i, cell ->
+            cell.forEachIndexed { j, sourceValue ->
                 if (sourceValue == 0) {
                     return@forEachIndexed
                 }
@@ -27,6 +27,7 @@ class BoardServiceImpl : BoardService {
         return true
     }
 
+    // FIXME 합 검사 말고 1 - 9 까지 모두 있는지 확인 해야함
     override fun isCorrectBoard(answer: Board): Boolean {
 
         if (answer.any { it.sum() != SUM }) {
