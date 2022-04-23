@@ -90,16 +90,10 @@ export const GameProvider = ({ children }) => {
 
             let map = null;
             
-            // TODO change spy code\
-            if(process.env.NODE_ENV === 'development') {
-              map = FETCHED_BOARD;
-            } else {
-              const rand = getRandomIntFromRange(18, 81);
-              const { data } = await fetchSudoku({params: {showCount: rand}});
+            const rand = getRandomIntFromRange(18, 81);
+            const { data } = await fetchSudoku({params: {showCount: rand}});
 
-              map = data.map;
-
-            }
+            map = data.map;
 
             setBoard(map);
             

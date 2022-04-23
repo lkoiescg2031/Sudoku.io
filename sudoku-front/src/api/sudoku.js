@@ -1,13 +1,7 @@
-import api from "./api"
+import api from "./api";
 
-export function fetchSudoku({params}) {
-    // 수정필요 - 주소
-    return api.get(`/sudoku/random`, {
-        params
-        // 수정필요
-    });
+export function fetchSudoku({ params }) {
+	return api.post(`/games/random`, params);
 }
 
-export function setBoard() {
-
-}
+export function setBoard() {}
