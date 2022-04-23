@@ -1,4 +1,0 @@
-mybatis:
-  type-aliases-package: io.sudoku.sudoku.**.model
-  mapper-locations: mapper/*.xml
-  type-handlers-package: io.sudoku.suodku.common.config.typehandler, io.sudoku.sudoku.**.model
