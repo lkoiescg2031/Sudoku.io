@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import com.fasterxml.jackson.databind.node.ArrayNode
 import io.sudoku.sudoku.board.model.Cell.Companion.toCell
-import io.sudoku.sudoku.common.config.typehandler.JsonTypeHandler
+import io.sudoku.sudoku.common.config.typehandlertemplate.JsonTypeHandler
 import io.sudoku.sudoku.utils.LoggerDelegate
 import org.apache.ibatis.type.MappedTypes
 

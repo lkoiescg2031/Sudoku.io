@@ -1,4 +1,4 @@
-package io.sudoku.sudoku.common.config.typehandler
+package io.sudoku.sudoku.common.config.typehandlertemplate
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.apache.ibatis.type.JdbcType
