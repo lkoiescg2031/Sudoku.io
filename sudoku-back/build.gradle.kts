@@ -46,7 +46,7 @@ dependencies {
 	// swagger 설정
 	implementation("io.springfox:springfox-boot-starter:3.0.0")
 
-	// spring boot test dependency 설정
+	// test 설정
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
