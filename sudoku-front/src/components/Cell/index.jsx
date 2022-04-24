@@ -12,7 +12,7 @@ const cx = classnames.bind(style);
 const Cell = ({x, y}) => {
   const { num, isFixed, updateNumBoard } = useCell(x,y);
   const { curX, curY, updateCurser } = useCurser();
-  const selectCurser = () => {
+  const selectCurser = (x, y) => {
     updateCurser(x,y);
     // 추가본
     updateNumBoard(x,y);
@@ -24,7 +24,7 @@ const Cell = ({x, y}) => {
       isZero : num === 0, 
       isSelected : x === curX && y === curY 
     })}
-      onClick={selectCurser}
+      onClick={selectCurser(x, y)}
     >{num || num != 0}</div>
   )
 }

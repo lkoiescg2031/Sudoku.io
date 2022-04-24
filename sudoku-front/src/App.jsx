@@ -22,6 +22,7 @@ function App() {
     
     return (
         <GameProvider>
+            <div>learn react</div>
             <CurserProvider>
                 <div className="sdk">
                     <SudokuBoard/>
