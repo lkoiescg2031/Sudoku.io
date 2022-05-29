@@ -48,6 +48,8 @@ dependencies {
 
 	// test 설정
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0")
+	testImplementation("org.mockito:mockito-inline:2.21.0")
 }
 
 tasks.withType<KotlinCompile> {

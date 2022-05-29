@@ -21,7 +21,6 @@ internal class BoardServiceImplTest {
 
     @Nested
     inner class `MethodCreateRandomBoardTest` {
-
         @RepeatedTest(10)
         fun `정상 생성 확인 테스트`() {
             // given
@@ -77,19 +76,9 @@ internal class BoardServiceImplTest {
                 assertEquals(board.flatten().count { it != 0 }, Math.min(showCount, 81))
 
             } catch (e: Exception) {
-
                 assertTrue(showCount < 0)
             }
-
         }
     }
-
-//    @Test
-//    fun isOriginBoard() {
-//    }
-//
-//    @Test
-//    fun isCorrectBoard() {
-//    }
 
 }
